@@ -1,0 +1,38 @@
+import tw, { styled, css, theme, TwStyle } from 'twin.macro';
+
+interface {{pascalCase name}}Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  children?: React.ReactNode;
+}
+
+const primaryVariants = {
+  // Named class sets
+  primary: tw` `,
+  secondary: tw` `,
+};
+
+const sizeVariants = {
+  // Named class sets
+  sm: tw` `,
+  md: tw` `,
+  lg: tw` `,
+};
+
+const Styled{{pascalCase name}} = styled.div(
+  ({ variant, size }: {{pascalCase name}}Props) => [
+    // Base Styles
+    tw` `,
+
+    // Dynamic Styles
+    primaryVariants[variant],
+    sizeVariants[size],
+  ]
+);
+
+
+export const {{pascalCase name}} = (props: {{pascalCase name}}Props) => {
+  const { variant = 'primary', size = 'md', children, ...rest } = props;
+
+  return <Styled{{pascalCase name}} variant={variant} size={size} {...rest}>{children}</Styled{{pascalCase name}}>;
+};

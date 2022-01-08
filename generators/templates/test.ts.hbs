@@ -1,0 +1,9 @@
+import { {{pascalCase name}} } from '@/components/{{pascalCase name}}';
+import { render, fireEvent } from '@/utils/test-utils';
+
+describe('<{{pascalCase name}} />', () => {
+  it('should render without crashing', () => {
+    const { container } = render(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>);
+    expect(container).toBeInTheDocument();
+  });
+});
